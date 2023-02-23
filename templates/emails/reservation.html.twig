@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<div class="body">
+    <div class="container">
+        <div class="header text-center">
+        </div>
+        <div class="content">
+            <h1 class="text-center">Reservation</h1>
+            <p class="block">
+                 nom : {{reservation.nom}}
+            </p>
+            <p class="block">
+                 Email : {{reservation.email}}
+            </p>
+            <p class="block">
+                 Message : {{reservation.message}}
+            </p>
+             <p class="block">
+                 date : {{reservation.date|date("m/d/Y")}}
+            </p>
+             <p class="block">
+                 type : {{reservation.type}}
+            </p>
+ 
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

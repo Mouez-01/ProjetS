@@ -31,6 +31,22 @@ class Reservation
      * @ORM\Column(type="text", nullable=true)
      */
     private $message;
+ 
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $duree;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $date;
 
     public function getId(): ?int
     {
@@ -69,6 +85,43 @@ class Reservation
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+ 
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDuree(): ?string
+    {
+        return $this->duree;
+    }
+
+    public function setDuree(?string $duree): self
+    {
+        $this->duree = $duree;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

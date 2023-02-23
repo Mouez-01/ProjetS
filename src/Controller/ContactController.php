@@ -28,14 +28,10 @@ class ContactController extends AbstractController
             $contact = $form->getData();
              
             $entityManager->persist($contact);
-            $entityManager->flush();
-            // On crée le message
-            $message = (new \Swift_Message('Nouveau contact'))
-                // On attribue l'expéditeur
-                ->setFrom($contact->getEmail())
-                // On attribue le destinataire
-                ->setTo('moezhajria@gmail.com')
-                // On crée le texte avec la vue
+            $entityManager->flush(); 
+            $message = (new \Swift_Message('Nouveau contact')) 
+                ->setFrom($contact->getEmail()) 
+                ->setTo('sonia@gmail.com') 
                 ->setBody(
                     $this->renderView(
                         'emails/contact.html.twig', compact('contact')
@@ -46,6 +42,7 @@ class ContactController extends AbstractController
             $mailer->send($message);
 
             $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.'); // Permet un message flash de renvoi
+        
         }
         return $this->render('contact/index.html.twig',
         ['form' => $form->createView()]

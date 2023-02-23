@@ -98,5 +98,12 @@ body {
     border-radius: 0.25rem;
     padding: 0.75rem 1.5rem;
     border: none;
-    font-weight
-  
+ 
+  }
+
+  /* .bd-footer.bg-dark.text-center.text-white.mt-5 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 1px;
+    } */
